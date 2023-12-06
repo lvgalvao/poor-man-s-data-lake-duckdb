@@ -4,15 +4,21 @@ version = "0.1.0"
 description = ""
 authors = ["Luciano Filho <lvgalvaofilho@gmail.com>"]
 readme = "README.md"
-packages = [{include = "poor_man_s_data_lake_duckdb"}]
+packages = [{include = "jaffle"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-
+python = ">=3.11,<3.12"
+dagster = "^1.5.10"
+jaffle = {path = "./jaffle"}
 
 [tool.poetry.group.dev.dependencies]
 commitizen = "^3.13.0"
 pre-commit = "^3.5.0"
+awscli = "^1.22.0"        # Substitua por uma versão recente e estável
+awscli-local = "^0.14"    # Substitua por uma versão recente e estável
+localstack = "^1.0"       # Substitua por uma versão recente e estável
+dagit = "^1.5.10"         # Deve estar em sincronia com a versão do dagster
+pytest = "^7.0.0"
 
 [build-system]
 requires = ["poetry-core"]
